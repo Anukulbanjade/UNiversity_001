@@ -35,15 +35,12 @@ This is a web application developed using Django to manage students in the Schoo
 6. Access the application at [http://localhost:8000](http://localhost:8000) 🌐
 
 ## Usage 🚀
-- Login to the admin panel using the superuser account created in step 4.
+- Login to the admin panel using the superuser account created.
 - Manage courses, students, and other data through the admin panel.
 - Navigate to the respective URLs to view lists and detailed information.
 
 ## Contributing 🤝
 Contributions are welcome! Please fork the repository and submit a pull request.
-
-## License 📝
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Future Enhancements
 
