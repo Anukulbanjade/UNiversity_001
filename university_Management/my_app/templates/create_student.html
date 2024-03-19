@@ -21,18 +21,20 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s; /* Add transition effect to box-shadow */
+        }
+        .container:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adjust box-shadow on hover */
         }
         h1 {
             text-align: center;
             color: #333;
         }
-        form {
-            margin-top: 20px;
-        }
         label {
-            display: block;
-            margin-bottom: 8px;
             color: #555;
+        }
+        .form-group {
+            margin-bottom: 20px;
         }
         input[type="text"],
         input[type="email"],
@@ -40,22 +42,21 @@
         select {
             width: 100%;
             padding: 12px;
-            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box;
             font-size: 16px;
             color: #333;
         }
         button[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            padding: 12px 20px;
+            width: 100%;
+            padding: 12px;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
             font-size: 16px;
-            transition: background-color 0.3s;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Add transition effect to background-color */
         }
         button[type="submit"]:hover {
             background-color: #0056b3;
@@ -64,6 +65,7 @@
             color: #dc3545;
             margin-top: 10px;
             font-size: 14px;
+            text-align: center;
         }
     </style>
 </head>
@@ -72,26 +74,31 @@
         <h1>Create Student</h1>
         <form method="post">
             {% csrf_token %}
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-            
-            <label for="student_id">Student ID:</label>
-            <input type="text" id="student_id" name="student_id" required><br>
-            
-            <label for="date_of_birth">Date of Birth:</label>
-            <input type="date" id="date_of_birth" name="date_of_birth" required><br>
-            
-            <label for="course">Course:</label>
-            <select id="course" name="course" required>
-                <option value="" disabled selected>Select Course</option>
-                {% for course in courses %}
-                    <option value="{{ course.id }}">{{ course.name }}</option>
-                {% endfor %}
-            </select><br>
-            
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="student_id">Student ID:</label>
+                <input type="text" id="student_id" name="student_id" required>
+            </div>
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth:</label>
+                <input type="date" id="date_of_birth" name="date_of_birth" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <select id="course" name="course" required>
+                    <option value="" disabled selected>Select Course</option>
+                    {% for course in courses %}
+                        <option value="{{ course.id }}">{{ course.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <button type="submit">Submit</button>
         </form>
         {% if form.errors %}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to University Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Custom styles */
         body {
@@ -25,6 +26,11 @@
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         h1 {
             color: #4caf50;
@@ -45,7 +51,6 @@
         .btn {
             padding: 20px;
             width: 200px; /* Adjust the width to create a square button */
-            background-color: #4caf50;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -53,9 +58,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        .btn-green {
+            background-color: #4caf50; /* Green color for buttons */
+        }
+        .btn-blue {
+            background-color: #3498db; /* Blue color for buttons */
+        }
+        .btn i {
+            margin-right: 10px;
         }
         .btn:hover {
-            background-color: #45a049;
+            opacity: 0.8;
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -64,12 +83,12 @@
         <h1>Welcome to University Management</h1>
         <p>This is the homepage of our university management system. You can navigate to other sections using the links below:</p>
         <div class="btn-container">
-            <a href="{% url 'student_list' %}" class="btn">View Student List</a>
-            <a href="{% url 'course_list' %}" class="btn">View Course List</a>
+            <a href="{% url 'create_student' %}" class="btn btn-green"><i class="fas fa-user-plus"></i> Add New Student</a>
+            <a href="{% url 'create_course' %}" class="btn btn-blue"><i class="fas fa-book"></i> Add New Course</a>
         </div>
         <div class="btn-container">
-            <a href="{% url 'create_student' %}" class="btn">Add New Student</a>
-            <a href="{% url 'create_course' %}" class="btn">Add New Course</a>
+            <a href="{% url 'student_list' %}" class="btn btn-green"><i class="fas fa-list"></i> View Student List</a>
+            <a href="{% url 'course_list' %}" class="btn btn-blue"><i class="fas fa-list-alt"></i> View Course List</a>
         </div>
     </div>
 </body>
