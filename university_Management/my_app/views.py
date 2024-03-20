@@ -66,6 +66,7 @@ def delete_course(request, pk):
         course.delete()
         return redirect('course_list')
     
+
 def update_course(request, pk):
     course = get_object_or_404(Course, pk=pk)
     if request.method == 'POST':
