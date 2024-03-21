@@ -20,7 +20,7 @@
             align-items: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 90%;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
@@ -36,16 +36,18 @@
             color: #4caf50;
             text-align: center;
             margin-bottom: 20px;
+            font-size: 28px;
         }
         p {
             color: #555;
-            font-size: 18px;
+            font-size: 16px;
             text-align: center;
             margin-bottom: 30px;
         }
         .btn-container {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 20px;
         }
         .btn {
@@ -62,6 +64,8 @@
             cursor: pointer;
             border: none;
             outline: none;
+            margin: 10px;
+            text-align: center;
         }
         .btn-green {
             background-color: #4caf50; /* Green color for buttons */
@@ -76,6 +80,18 @@
             opacity: 0.8;
             transform: translateY(-3px);
         }
+
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            .btn {
+                width: calc(50% - 20px);
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .btn {
+                width: calc(100% - 20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -85,8 +101,6 @@
         <div class="btn-container">
             <a href="{% url 'create_student' %}" class="btn btn-green"><i class="fas fa-user-plus"></i> Add New Student</a>
             <a href="{% url 'create_course' %}" class="btn btn-blue"><i class="fas fa-book"></i> Add New Course</a>
-        </div>
-        <div class="btn-container">
             <a href="{% url 'student_list' %}" class="btn btn-green"><i class="fas fa-list"></i> View Student List</a>
             <a href="{% url 'course_list' %}" class="btn btn-blue"><i class="fas fa-list-alt"></i> View Course List</a>
         </div>

@@ -12,16 +12,17 @@
             padding: 0;
         }
         .container {
-            max-width: 400px;
-            margin: 50px auto;
+            max-width: 100%;
+            margin: 20px;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            overflow-x: auto; /* Add horizontal scroll for small screens */
         }
         h1 {
             color: #333;
+            text-align: center;
             margin-bottom: 20px;
         }
         form {
@@ -55,6 +56,22 @@
         button[type="submit"]:hover {
             background-color: #45a049;
         }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        @media screen and (max-width: 600px) {
+            /* Responsive styles for small screens */
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+            input[type="text"],
+            input[type="email"],
+            select {
+                width: calc(100% - 20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -74,6 +91,5 @@
             <a href="{% url 'home' %}">Home</a>
         </footer>
     </div>
-   
 </body>
 </html>

@@ -43,6 +43,13 @@
         button:hover, a:hover {
             background-color: #ff3333;
         }
+        footer {
+            margin-top: 20px;
+        }
+        footer a {
+            color: #555;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -54,9 +61,9 @@
             <button type="submit">Yes, delete</button>
             <a href="{% url 'student_list' %}" class="cancel-btn">No, cancel</a>
         </form>
-        <footer>
-            <a href="{% url 'home' %}">Home</a>
-        </footer>
     </div>
+    <footer>
+        <a href="{% url 'home' %}">Home</a>
+    </footer>
 </body>
 </html>

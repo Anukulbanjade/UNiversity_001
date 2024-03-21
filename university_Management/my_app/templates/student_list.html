@@ -13,12 +13,13 @@
             padding: 0;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 100%;
+            margin: 20px;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Add horizontal scroll for small screens */
         }
         h1 {
             color: #333;
@@ -73,6 +74,23 @@
         footer {
             margin-top: 20px;
             text-align: center;
+        }
+        @media screen and (max-width: 600px) {
+            /* Responsive styles for small screens */
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+            .delete-btn, .update-btn {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
